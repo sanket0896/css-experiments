@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Browser Frame</title>
+    <style>
+        .container{
+            height: 130px;
+            width: 200px;
+            background: #356;
+            box-shadow: 8px 8px 30px -6px #000;
+            border-radius: 3px;
+        }
+        .title-bar{
+            height: 20%;
+            background: #1b3454;
+            padding-right: 10px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .title-bar > .action-btn{
+            height: 10px;
+            width: 10px;
+            background: cornsilk;
+            display: inline-block;
+            border-radius: 50%;
+            margin-left: 5px;
+        }
+
+        .title-bar > .action-btn.minimise{
+            background: lightgreen;
+        }
+
+        .title-bar > .action-btn.maximise{
+            background: lightblue;
+        }
+
+        .title-bar > .action-btn.close{
+            background: red;
+        }
+
+        .body-pane{
+            position: relative;
+            padding-left: 10%;
+            padding: 5%;
+        }
+
+
+        @keyframes progress{
+            0%{
+                width: 0;
+            }
+            50%{
+                width: 50%;
+            }
+
+            100%{
+                width:  100%;
+            }
+        }
+        .l{
+            height: 6px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 5%;
+        }
+        .l.l1{
+            width: 65%;
+        }
+        
+        .l.l2{
+            width: 35%;
+        }
+        .l.l3{
+            width: 50%;
+        }
+        .l.l4{
+            width: 25%;
+        }
+        .l > .ld{
+            background: #777;
+            height: inherit;
+            width: 0px;
+            border-radius: 5px;
+            animation: progress 0.4s linear;
+            animation-fill-mode: forwards;
+        }
+        .l.l1 > .ld{
+            animation-delay: 0;
+        }
+        .l.l2 > .ld{
+            animation-delay: 0.6s;
+        }
+        .l.l3 > .ld{
+            animation-delay: 1.2s;
+        }
+        .l.l4 > .ld{
+            animation-delay: 1.8s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-bar">
+            <div class="action-btn minimise"></div>
+            <div class="action-btn maximise"></div>
+            <div class="action-btn close"></div>
+        </div>
+        <div class="body-pane">
+            <div class="l l1">
+                <div class="ld"></div>
+            </div>
+            <div class="l l2">
+                <div class="ld"></div>
+            </div>
+            <div class="l l3">
+                <div class="ld"></div>
+            </div>
+            <div class="l l4">
+                <div class="ld"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
